@@ -1,0 +1,400 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Blobs */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(60px);
+  animation: blobWiggle 25s infinite ease-in-out;
+  z-index: 0;
+}
+
+.blob-purple {
+  background: #9381FF;
+  width: 400px;
+  height: 400px;
+  top: -50px;
+  left: -80px;
+}
+
+.blob-pink {
+  background: #FF7C99;
+  width: 400px;
+  height: 400px;
+  bottom: 50px;
+  right: -60px;
+  animation-delay: 5s;
+}
+
+.blob-green {
+  background: #7BE0AD;
+  width: 400px;
+  height: 400px;
+  top: 30%;
+  left: 40%;
+  animation-delay: 8s;
+}
+
+.blob-yellow {
+  background: #FFD93D;
+  width: 400px;
+  height: 400px;
+  top: 60%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+.blob-blue {
+  background: #57C7FF;
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 20%;
+  animation-delay: 12s;
+}
+
+@keyframes blobWiggle {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Content Container */
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Titles */
+.about-title {
+  font-size: 3rem;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  color: #222;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: #444;
+}
+
+.about-description,
+.feedback-text {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* Team Members */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.member {
+  background: #fff;
+  border: 4px solid #FFD93D;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  width: 230px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.member:hover {
+  transform: rotate(-2deg) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7BE0AD;
+  margin-bottom: 1rem;
+}
+
+.member h3 {
+  font-size: 1.3rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.member p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Button */
+.feedback-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  background: #FF7C99;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.feedback-btn:hover {
+  background: #FFD93D;
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #57C7FF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.modal-content button:hover {
+  background: #38b6ff;
+}
+
+/* Contact Info */
+.contact-info {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+/* === Responsive Layout === */
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem;
+    padding-top: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .about-description,
+  .feedback-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member {
+    width: 90%;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+
+  .feedback-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets & Small Laptops */
+@media (max-width: 768px) {
+  .team-members {
+    gap: 1rem;
+  }
+
+  .member {
+    width: 45%;
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Medium Laptops */
+@media (max-width: 1024px) {
+  .about-container {
+    padding: 1rem 2rem;
+  }
+
+  .member {
+    width: 40%;
+  }
+}
+
+/* Large Devices */
+@media (min-width: 1440px) {
+  .about-container {
+    max-width: 1200px;
+  }
+
+  .member {
+    width: 280px;
+  }
+
+  .blob {
+    filter: blur(100px);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 380px;
+    padding: 1.2rem;
+    border-radius: 12px;
+
+    /* important fix */
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    font-size: 0.95rem;
+  }
+
+  .modal-content button {
+    font-size: 1rem;
+  }
+}
+
+.modal-content {
+  text-align: center;
+}
+
+/* form inputs center alignment fix */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* inputs full center + same width */
+.modal-content input,
+.modal-content textarea {
+  width: 90%;
+  max-width: 320px;
+  display: block;
+  margin: 8px auto;
+  text-align: left;
+
+  box-sizing: border-box;
+}
+
+/* button center */
+.modal-content button {
+  width: 90%;
+  max-width: 320px;
+  display: block;
+  margin: 10px auto;
+}
+
+@media (max-width: 480px) {
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 340px;
+    padding: 1rem;
+  }
+
+  .close-btn {
+    font-size: 1.3rem;
+  }
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="aboutus.css" />
+</head>
+<body>
+  <!-- Blurred Animated Background -->
+  <div class="bg-blobs">
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-pink"></div>
+    <div class="blob blob-green"></div>
+    <div class="blob blob-yellow"></div>
+    <div class="blob blob-blue"></div>
+  </div>
+
+  <div class="about-container">
+    <h1 class="about-title">About Us</h1>
+    <p class="about-description">
+      We provide quiz casts based on age and subject to make learning fun and easy. Our mission: simplify and gamify education.
+    </p>
+
+    <h2 class="section-title">Team Members</h2>
+    <div class="team-members">
+      <div class="member">
+        <img src="pasport.jpg" alt="Nadia">
+        <h3>Nadia Chand Mandal</h3>
+        <p>Frontend Developer</p>
+      </div>
+      <div class="member">
+        <img src="WhatsApp Image 2025-06-08 at 10.03.21 PM.jpeg" alt="Arnaa">
+        <h3>Arnaa Das Burman</h3>
+        <p>Frontend & UI Designer</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Give Feedback</h2>
+    <p class="feedback-text">Like our work? Think we can do better? Let us know!</p>
+    <button onclick="openModal()" class="feedback-btn">Give Feedback</button>
+
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> support@quizadilla.com</p>
+      <p><strong>Phone:</strong></p>
+      <p><a href="tel:+919876543210">+91 9876543210</a></p>
+      <p><a href="tel:+916294086951">+91 6294086951</a></p>
+      <p><strong>Address:</strong> Kolkata, India</p>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Submit Feedback</h2>
+      <form action="https://formsubmit.co/nadiachandm@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Feedback" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("feedbackModal");
+    function openModal() { modal.style.display = "flex"; }
+    function closeModal() { modal.style.display = "none"; }
+    window.onclick = e => { if (e.target === modal) closeModal(); };
+  </script>
+</body>
+</html>

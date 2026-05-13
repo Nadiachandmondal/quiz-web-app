@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Page</title>
+  <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="quiz.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Shapes -->
+  <div class="background-layer">
+    <span class="shape math color-purple pos-tl">π</span>
+    <span class="shape math color-yellow pos-tr">∑</span>
+    <span class="shape math color-pink pos-ml">∫</span>
+    <span class="shape math color-green pos-mr">√</span>
+    <span class="shape fn color-red pos-bl">a² + b² = c²</span>
+    <span class="shape alpha color-purple pos-tc">X</span>
+    <span class="shape alpha color-yellow pos-bp">Y</span>
+    <span class="shape alpha color-green pos-bc">A</span>
+    <span class="shape word color-red pos-mc">solve</span>
+    <div class="shape circle pos-mp"></div>
+    <div class="shape cube pos-br"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+
+  <button class="subject-btn">Mathematics</button>
+  <button class="subject-btn">Reasoning</button>
+  <button class="subject-btn">English</button>
+  <button class="subject-btn">General</button>
+  <button class="subject-btn">History</button>
+  <button class="subject-btn">Geography</button>
+  <button class="subject-btn">English</button>
+  <button class="subject-btn">Literature</button>
+  <button class="subject-btn">Art</button>
+  <button class="subject-btn">Technology</button>
+  <button class="subject-btn">Sports</button>
+
+  </aside>
+
+  <div class="hamburger" id="hamburger">&#9776;</div>
+
+  <div class="home-btn" onclick="location.href='index.html'">
+    <i class="fa-solid fa-house"></i>
+  </div>  
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1 class="title">QUIZADILLA</h1>
+
+    <div class="question-box" id="main-div">
+
+   <div id="loader" class="loader hidden">
+    <img src="loading.gif" alt="Loading..." class="loader-gif" />
+    <p>Loading question...</p>
+  </div>
+
+    </div>
+    <button id="next-btn">Next Question</button>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Quizadilla
+  </footer>
+  
+
+  <script src="main.js"></script>
+</body>
+</html>
